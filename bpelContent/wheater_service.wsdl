@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://wheater.pkg" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://wheater.pkg">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://wheater.pkg">
+            <xs:element name="WHset_time_to_transition">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="OnDestroy">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHcreate">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHcreateResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="OnCreate">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHsync">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="t0" type="xs:int"/>
+                        <xs:element minOccurs="0" name="t1" type="xs:int"/>
+                        <xs:element minOccurs="0" name="heating_element_capacity" type="xs:double"/>
+                        <xs:element minOccurs="0" name="temperature" type="xs:double"/>
+                        <xs:element minOccurs="0" name="tank_setpoint" type="xs:double"/>
+                        <xs:element minOccurs="0" name="tank_UA" type="xs:double"/>
+                        <xs:element minOccurs="0" name="water_demand" type="xs:double"/>
+                        <xs:element minOccurs="0" name="tank_volume" type="xs:double"/>
+                        <xs:element minOccurs="0" name="thermostat_deadband" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHsyncResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHinit">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHinitResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHcommit">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHcommitResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHtank_state">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHtank_stateResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHpostsync">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHpostsyncResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHdhdt">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="h" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHdhdtResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHactual_kW">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHactual_kWResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHnew_h_2zone">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="h0" type="xs:double"/>
+                        <xs:element minOccurs="0" name="delta_t" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHnew_h_2zoneResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHset_current_model_and_load_state">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHset_current_model_and_load_stateResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHnew_time_1node">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="T0" type="xs:double"/>
+                        <xs:element minOccurs="0" name="T1" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHnew_time_1nodeResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHnew_temp_1node">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="T0" type="xs:double"/>
+                        <xs:element minOccurs="0" name="delta_t" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHnew_temp_1nodeResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHnew_time_2zone">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="h0" type="xs:double"/>
+                        <xs:element minOccurs="0" name="h1" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHnew_time_2zoneResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHget_Tambient">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WHget_TambientResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="WHinitRequest">
+        <wsdl:part name="parameters" element="ns:WHinit"/>
+    </wsdl:message>
+    <wsdl:message name="WHinitResponse">
+        <wsdl:part name="parameters" element="ns:WHinitResponse"/>
+    </wsdl:message>
+    <wsdl:message name="WHpostsyncRequest">
+        <wsdl:part name="parameters" element="ns:WHpostsync"/>
+    </wsdl:message>
+    <wsdl:message name="WHpostsyncResponse">
+        <wsdl:part name="parameters" element="ns:WHpostsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OnDestroyRequest">
+        <wsdl:part name="parameters" element="ns:OnDestroy"/>
+    </wsdl:message>
+    <wsdl:message name="WHset_current_model_and_load_stateRequest">
+        <wsdl:part name="parameters" element="ns:WHset_current_model_and_load_state"/>
+    </wsdl:message>
+    <wsdl:message name="WHset_current_model_and_load_stateResponse">
+        <wsdl:part name="parameters" element="ns:WHset_current_model_and_load_stateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="WHnew_time_2zoneRequest">
+        <wsdl:part name="parameters" element="ns:WHnew_time_2zone"/>
+    </wsdl:message>
+    <wsdl:message name="WHnew_time_2zoneResponse">
+        <wsdl:part name="parameters" element="ns:WHnew_time_2zoneResponse"/>
+    </wsdl:message>
+    <wsdl:message name="WHnew_time_1nodeRequest">
+        <wsdl:part name="parameters" element="ns:WHnew_time_1node"/>
+    </wsdl:message>
+    <wsdl:message name="WHnew_time_1nodeResponse">
+        <wsdl:part name="parameters" element="ns:WHnew_time_1nodeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="WHset_time_to_transitionRequest">
+        <wsdl:part name="parameters" element="ns:WHset_time_to_transition"/>
+    </wsdl:message>
+    <wsdl:message name="WHnew_temp_1nodeRequest">
+        <wsdl:part name="parameters" element="ns:WHnew_temp_1node"/>
+    </wsdl:message>
+    <wsdl:message name="WHnew_temp_1nodeResponse">
+        <wsdl:part name="parameters" element="ns:WHnew_temp_1nodeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="WHtank_stateRequest">
+        <wsdl:part name="parameters" element="ns:WHtank_state"/>
+    </wsdl:message>
+    <wsdl:message name="WHtank_stateResponse">
+        <wsdl:part name="parameters" element="ns:WHtank_stateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="WHdhdtRequest">
+        <wsdl:part name="parameters" element="ns:WHdhdt"/>
+    </wsdl:message>
+    <wsdl:message name="WHdhdtResponse">
+        <wsdl:part name="parameters" element="ns:WHdhdtResponse"/>
+    </wsdl:message>
+    <wsdl:message name="WHcreateRequest">
+        <wsdl:part name="parameters" element="ns:WHcreate"/>
+    </wsdl:message>
+    <wsdl:message name="WHcreateResponse">
+        <wsdl:part name="parameters" element="ns:WHcreateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="WHnew_h_2zoneRequest">
+        <wsdl:part name="parameters" element="ns:WHnew_h_2zone"/>
+    </wsdl:message>
+    <wsdl:message name="WHnew_h_2zoneResponse">
+        <wsdl:part name="parameters" element="ns:WHnew_h_2zoneResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OnCreateRequest">
+        <wsdl:part name="parameters" element="ns:OnCreate"/>
+    </wsdl:message>
+    <wsdl:message name="WHcommitRequest">
+        <wsdl:part name="parameters" element="ns:WHcommit"/>
+    </wsdl:message>
+    <wsdl:message name="WHcommitResponse">
+        <wsdl:part name="parameters" element="ns:WHcommitResponse"/>
+    </wsdl:message>
+    <wsdl:message name="WHactual_kWRequest">
+        <wsdl:part name="parameters" element="ns:WHactual_kW"/>
+    </wsdl:message>
+    <wsdl:message name="WHactual_kWResponse">
+        <wsdl:part name="parameters" element="ns:WHactual_kWResponse"/>
+    </wsdl:message>
+    <wsdl:message name="WHsyncRequest">
+        <wsdl:part name="parameters" element="ns:WHsync"/>
+    </wsdl:message>
+    <wsdl:message name="WHsyncResponse">
+        <wsdl:part name="parameters" element="ns:WHsyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="WHget_TambientRequest">
+        <wsdl:part name="parameters" element="ns:WHget_Tambient"/>
+    </wsdl:message>
+    <wsdl:message name="WHget_TambientResponse">
+        <wsdl:part name="parameters" element="ns:WHget_TambientResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="wheater_servicePortType">
+        <wsdl:operation name="WHinit">
+            <wsdl:input message="ns:WHinitRequest" wsaw:Action="urn:WHinit"/>
+            <wsdl:output message="ns:WHinitResponse" wsaw:Action="urn:WHinitResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHpostsync">
+            <wsdl:input message="ns:WHpostsyncRequest" wsaw:Action="urn:WHpostsync"/>
+            <wsdl:output message="ns:WHpostsyncResponse" wsaw:Action="urn:WHpostsyncResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="OnDestroy">
+            <wsdl:input message="ns:OnDestroyRequest" wsaw:Action="urn:OnDestroy"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHset_current_model_and_load_state">
+            <wsdl:input message="ns:WHset_current_model_and_load_stateRequest" wsaw:Action="urn:WHset_current_model_and_load_state"/>
+            <wsdl:output message="ns:WHset_current_model_and_load_stateResponse" wsaw:Action="urn:WHset_current_model_and_load_stateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHnew_time_2zone">
+            <wsdl:input message="ns:WHnew_time_2zoneRequest" wsaw:Action="urn:WHnew_time_2zone"/>
+            <wsdl:output message="ns:WHnew_time_2zoneResponse" wsaw:Action="urn:WHnew_time_2zoneResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHnew_time_1node">
+            <wsdl:input message="ns:WHnew_time_1nodeRequest" wsaw:Action="urn:WHnew_time_1node"/>
+            <wsdl:output message="ns:WHnew_time_1nodeResponse" wsaw:Action="urn:WHnew_time_1nodeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHset_time_to_transition">
+            <wsdl:input message="ns:WHset_time_to_transitionRequest" wsaw:Action="urn:WHset_time_to_transition"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHnew_temp_1node">
+            <wsdl:input message="ns:WHnew_temp_1nodeRequest" wsaw:Action="urn:WHnew_temp_1node"/>
+            <wsdl:output message="ns:WHnew_temp_1nodeResponse" wsaw:Action="urn:WHnew_temp_1nodeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHtank_state">
+            <wsdl:input message="ns:WHtank_stateRequest" wsaw:Action="urn:WHtank_state"/>
+            <wsdl:output message="ns:WHtank_stateResponse" wsaw:Action="urn:WHtank_stateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHdhdt">
+            <wsdl:input message="ns:WHdhdtRequest" wsaw:Action="urn:WHdhdt"/>
+            <wsdl:output message="ns:WHdhdtResponse" wsaw:Action="urn:WHdhdtResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHcreate">
+            <wsdl:input message="ns:WHcreateRequest" wsaw:Action="urn:WHcreate"/>
+            <wsdl:output message="ns:WHcreateResponse" wsaw:Action="urn:WHcreateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHnew_h_2zone">
+            <wsdl:input message="ns:WHnew_h_2zoneRequest" wsaw:Action="urn:WHnew_h_2zone"/>
+            <wsdl:output message="ns:WHnew_h_2zoneResponse" wsaw:Action="urn:WHnew_h_2zoneResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="OnCreate">
+            <wsdl:input message="ns:OnCreateRequest" wsaw:Action="urn:OnCreate"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHcommit">
+            <wsdl:input message="ns:WHcommitRequest" wsaw:Action="urn:WHcommit"/>
+            <wsdl:output message="ns:WHcommitResponse" wsaw:Action="urn:WHcommitResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHactual_kW">
+            <wsdl:input message="ns:WHactual_kWRequest" wsaw:Action="urn:WHactual_kW"/>
+            <wsdl:output message="ns:WHactual_kWResponse" wsaw:Action="urn:WHactual_kWResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHsync">
+            <wsdl:input message="ns:WHsyncRequest" wsaw:Action="urn:WHsync"/>
+            <wsdl:output message="ns:WHsyncResponse" wsaw:Action="urn:WHsyncResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="WHget_Tambient">
+            <wsdl:input message="ns:WHget_TambientRequest" wsaw:Action="urn:WHget_Tambient"/>
+            <wsdl:output message="ns:WHget_TambientResponse" wsaw:Action="urn:WHget_TambientResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="wheater_serviceSoap11Binding" type="ns:wheater_servicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="WHinit">
+            <soap:operation soapAction="urn:WHinit" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="OnDestroy">
+            <soap:operation soapAction="urn:OnDestroy" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="WHpostsync">
+            <soap:operation soapAction="urn:WHpostsync" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="WHset_current_model_and_load_state">
+            <soap:operation soapAction="urn:WHset_current_model_and_load_state" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="WHnew_time_2zone">
+            <soap:operation soapAction="urn:WHnew_time_2zone" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="WHnew_time_1node">
+            <soap:operation soapAction="urn:WHnew_time_1node" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="WHset_time_to_transition">
+            <soap:operation soapAction="urn:WHset_time_to_transition" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="WHtank_state">
+            <soap:operation soapAction="urn:WHtank_state" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="WHnew_temp_1node">
+            <soap:operation soapAction="urn:WHnew_temp_1node" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="WHdhdt">
+            <soap:operation soapAction="urn:WHdhdt" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="WHcreate">
+            <soap:operation soapAction="urn:WHcreate" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="WHnew_h_2zone">
+            <soap:operation soapAction="urn:WHnew_h_2zone" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="OnCreate">
+            <soap:operation soapAction="urn:OnCreate" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="WHcommit">
+            <soap:operation soapAction="urn:WHcommit" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="WHactual_kW">
+            <soap:operation soapAction="urn:WHactual_kW" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="WHsync">
+            <soap:operation soapAction="urn:WHsync" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="WHget_Tambient">
+            <soap:operation soapAction="urn:WHget_Tambient" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="wheater_service">
+        <wsdl:port name="wheater_serviceHttpSoap11Endpoint" binding="ns:wheater_serviceSoap11Binding">
+            <soap:address location="http://localhost:9090/Wheater/services/wheater_service.wheater_serviceHttpSoap11Endpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

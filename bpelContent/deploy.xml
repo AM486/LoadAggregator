@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:freezer.pkg="http://freezer.pkg" xmlns:loadAggregator="http://loadAggregator" xmlns:wheater.pkg="http://wheater.pkg">
+  <process name="loadAggregator:loadAggregator">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="loadAggregator:loadAggregatorService" port="loadAggregatorPort"/>
+    </provide>
+    <invoke partnerLink="freezer">
+      <service name="freezer.pkg:freezer_service" port="freezer_serviceHttpSoap11Endpoint"/>
+    </invoke>
+    <invoke partnerLink="wheaterPL">
+      <service name="wheater.pkg:wheater_service" port="wheater_serviceHttpSoap11Endpoint"/>
+    </invoke>
+  </process>
+</deploy>
